@@ -1,8 +1,10 @@
-= qs
+qs
+==
 
 ~200-byte selector engine
 
-== API
+API
+---
 
     $('body').contentEditable = true                          # get single node
     $('h1', parent).textContent = 'Hai!'                      # get single node from parent
@@ -10,14 +12,16 @@
     $$ 'a', (a) -> a.dataset.foo = 'bar'                      # loop through list of nodes
     $$ 'p', parent, (child) -> child.classList.add 'hidden'   # loop through list of nodes from parent
 
-== Installation
+Installation
+------------
 
     <script>
       var $ = function(s, ctx) { var n = ctx || document; return n.querySelector.call(n, s) };
       var $$ = function(s, ctx, f) { if (undefined == f) f = ctx; var n = ctx || document; return Array.prototype.forEach.call(n.querySelectorAll.call(n, s), f) };
     </script>
 
-== FAQ
+FAQ
+---
 
 **How is this better than jQuery?**
 
